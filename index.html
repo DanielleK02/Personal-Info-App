@@ -1,0 +1,147 @@
+<html> 
+<head>
+    <style type="text/css"> 
+        body {
+            background-color: mediumpurple;
+            color: white;
+            text-align: center;
+        }
+        div {
+            width: 70%;
+            margin: 10px auto;
+            padding: .7%;
+            border: 3px solid black;
+        }
+        div.longText {
+            border: 3px solid black;
+        }
+        div.shortText {
+            background-color: plum;
+        }
+        
+        div.clicked {
+            background-color: pink !important;
+        }
+   
+    </style>
+   
+</head>
+<body>
+    <span style="color:darkblue"><u><h1>Personal Info App</h1></u></span>
+     <img src ="hockey.jpg.JPG" width="40%" id="img1">
+    <script>
+        //let name = "Danielle Klee"
+        //let age = 17
+        //created an object called person
+        let person = {
+            //key : value
+            "firstName": "Danielle",
+            "lastName": "Klee",
+            "age": 17,
+            "favColor": "purple",
+            "siblings": ["Josh", "Trevor"], 
+            //siblings : [{name:"Josh", age:25}, {name:"Trevor", 19}]
+            "favArtists": ["Lauren Daigle", "for KING & COUNTRY", "Tauren Wells"],
+            "favSport": "Hockey",
+            "favHobby": "Drawing",
+            "favFood": "Chick-fil-a"
+        }
+        console.log(person)
+        console.log(person.age)
+        
+        /*let elem1 = document.createElement('h3')
+            elem1.innerHTML = person.firstName
+         document.body.appendChild(elem1)*/
+       
+        let elem = document.createElement('div')
+        elem.classList.add('shortText')  
+        elem.innerHTML = `<h3>Name: </h3>
+${person.firstName} ${person.lastName}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Age: </h3>
+${person.age}, Next year I will be ${person.age +1}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Favorite Color: </h3>
+            ${person.favColor}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Siblings: </h3>
+            ${person.siblings}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Favorite Artists: </h3>
+            ${person.favArtists}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Favorite Sport: </h3>
+            ${person.favSport}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Favorite Hobby: </h3>
+            ${person.favHobby}`
+            document.body.appendChild(elem)
+         
+          elem = document.createElement('div')
+            elem.classList.add('shortText')  
+            elem.innerHTML = `<h3>Favorite Food: </h3>
+            ${person.favFood}`
+            document.body.appendChild(elem)
+         
+            //get a reference to elements on the page
+        let divs = document.querySelectorAll(`div`);
+            for(let i = 0; i < divs.length; i++) {
+                let div = divs[i];
+                div.addEventListener(`click`, handleClick);
+            }
+        
+            function handleClick(event) {
+                //event.target.style.backgroundColor = "pink";
+                event.target.classList.toggle(`clicked`);
+            }
+        
+        document.querySelector(`#img1`).addEventListener(`click`, handleImgClick)
+        
+        function handleImgClick(event) {
+            event.target.width /= 2
+        }
+        
+    </script>
+    
+    <div class="longText">
+        <span style="color:coral"><h3>My Summer</h3> </span>
+        <p>Over the summer I didn't really do much but we went on vacation. We traveled into Michigan to go to the beach. During vacation my brother, sister-in-law, and my nephew all came up and met us on vacation which made it even better! It was fun we had a good time! Also, this summer I was lifting with my brother here at Northview. We had a trainner that was tainning my brother but he said I could join in with it also. I also found out that I have a knee problem where my knee cap is getting stuck on my femur bone. My knee cap isn't tracking correctly which is causing a lot of pain, along with my femur bone being rotated inward somewhat. I also spent sometime with my brother, sister-in-law, and my nephew. </p>
+        <img src ="beach.jpg.jpg" width="40%"> 
+    </div>
+    
+    <div class="longText">   
+      <span style="color:coral"><h3>Favorite Pass Time</h3></span>
+        <p>My favorite pass time activities are going outside, drawing, singing, playing xbox, lifting, playing hockey, etc. Iv'e always been an active person and love going places and doing activities. I love being active and going outside and spending time with friends and family. I mostly hang out with my boyfriend/bestfriend, which I love going to wildwood and roller blading or going on walks with him. I also like to edit images and add filters to them to make them look more clear or unique. </p>
+        <img src="nephew.jpg.JPEG" width="30%"> <img src="prom.jpg.JPEG" width="40%">
+        </div>
+    
+      <div class="longText">
+        <span style="color:coral"><h3>Video Games</h3></span>
+        <p>I do not play a big varity of video games but I mostly play fortnite and World War 2. I enjoy doing this when I don't really have much to do.</p>
+    </div>
+    
+     <div class="longText">
+        <span style="color:coral"><h3>Plans After High School</h3></span>
+        <p>My plan after high school is to go to college at Owens and study computer science. I want to stay at Owens for two years then transfer to the Universirty of Toledo for my next two years.</p>
+    </div>
+    
+</body>
+</html>
